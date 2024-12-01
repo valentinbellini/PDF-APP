@@ -21,3 +21,5 @@ __pycache__/
 .key
 .encrypted
 .decrypted
+
+notes.txt
