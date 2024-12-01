@@ -1,7 +1,5 @@
-import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import messagebox
 from PyPDF2 import PdfReader, PdfWriter
-
 
 
 # Función para proteger un archivo PDF con una contraseña
