@@ -1,0 +1,23 @@
+# Logs
+*.log
+file_organizer.log
+
+# Entornos virtuales
+env/
+.env/
+
+
+# Archivos de configuración locales
+*.env
+
+# Archivos compilados de Python
+*.pyc
+__pycache__/
+
+# Configuración de IDEs
+.vscode/
+.idea/
+
+.key
+.encrypted
+.decrypted
