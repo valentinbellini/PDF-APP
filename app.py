@@ -1,6 +1,6 @@
-from tk_window_pdf_pass import *
-from tk_window_encrypt import *
-from tk_window_pdf_metadata import *
+from src.tk_window_pdf_pass import *
+from src.tk_window_encrypt import *
+from src.tk_window_pdf_metadata import *
 
 
 # Funciones para otras aplicaciones (puedes personalizar estas interfaces)

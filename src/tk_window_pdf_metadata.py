@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, Toplevel
 from tkinter.ttk import Combobox
-from fts_pdf_metadata import read_metadata, add_metadata
+from .fts_pdf_metadata import read_metadata, add_metadata
 
 # Función para abrir la interfaz de "Gestión de Metadatos"
 def open_pdf_metadata():

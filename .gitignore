@@ -23,3 +23,8 @@ __pycache__/
 .decrypted
 
 notes.txt
+
+build/
+dist/
+*.spec
+__pycache__/

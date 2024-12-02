@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, Toplevel
-from fts_pdf_password import *
+from .fts_pdf_password import *
 
 # Función para abrir la interfaz de "PDF Lock"
 def open_pdf_lock():
