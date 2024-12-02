@@ -23,6 +23,7 @@ __pycache__/
 .decrypted
 
 notes.txt
+todolist.txt
 
 build/
 dist/

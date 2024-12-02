@@ -30,8 +30,17 @@ def remove_password(input_pdf, output_pdf, password):
 
     if pdf_reader.is_encrypted:
         try:
-            pdf_reader.decrypt(password)
+            # Intentamos descifrar el archivo PDF con la contraseña proporcionada
+            decryption_result = pdf_reader.decrypt(password)
+
+            # Si la contraseña es incorrecta, el resultado de decrypt() es 0
+            # [PYPDF2] TODO: raise Exception for wrong password - Esperando actualización
+            if decryption_result == 0:
+                messagebox.showerror("Error", "Contraseña incorrecta.")
+                return
+
             messagebox.showinfo("Información", "Contraseña correcta. Eliminando protección...")
+
         except Exception as e:
             messagebox.showerror("Error", f"Error al desbloquear el archivo: {e}")
             return
@@ -48,6 +57,4 @@ def remove_password(input_pdf, output_pdf, password):
         pdf_writer.write(file)
 
     messagebox.showinfo("Éxito", f"El archivo '{output_pdf}' ha sido guardado sin protección.")
-
-
 

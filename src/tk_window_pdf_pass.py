@@ -7,7 +7,7 @@ def open_pdf_lock():
     # Función para manejar la acción de proteger PDF
     def on_protect():
         input_pdf = input_pdf_entry.get()
-        output_pdf = output_pdf_entry.get()
+        output_pdf = input_pdf_entry.get() # output_pdf_entry.get()
         password = password_entry.get()
         if input_pdf and output_pdf and password:
             protect_pdf(input_pdf, output_pdf, password)
@@ -25,7 +25,7 @@ def open_pdf_lock():
     # Función para manejar la acción de eliminar contraseña
     def on_remove():
         input_pdf = input_pdf_entry.get()
-        output_pdf = output_pdf_entry.get()
+        output_pdf = input_pdf_entry.get() # output_pdf_entry.get()
         password = password_entry.get()
         if input_pdf and output_pdf and password:
             remove_password(input_pdf, output_pdf, password)
@@ -40,11 +40,11 @@ def open_pdf_lock():
 
     pdf_window = Toplevel()
     pdf_window.title("Protección de PDF")
-    pdf_window.geometry("400x400")
+    pdf_window.geometry("400x300")
 
     # Crear los campos de entrada
     input_pdf_entry = tk.Entry(pdf_window, width=40)
-    output_pdf_entry = tk.Entry(pdf_window, width=40)
+    # output_pdf_entry = tk.Entry(pdf_window, width=40)
     password_entry = tk.Entry(pdf_window, show="*", width=40)
 
     # Crear botones para las acciones
@@ -52,9 +52,9 @@ def open_pdf_lock():
     input_pdf_entry.pack(pady=5)
     tk.Button(pdf_window, text="Examinar", command=lambda: select_file(input_pdf_entry)).pack(pady=5)
 
-    tk.Label(pdf_window, text="Archivo PDF de salida:").pack(pady=5)
-    output_pdf_entry.pack(pady=5)
-    tk.Button(pdf_window, text="Examinar", command=lambda: select_file(output_pdf_entry)).pack(pady=5)
+    # tk.Label(pdf_window, text="Archivo PDF de salida:").pack(pady=5)
+    # output_pdf_entry.pack(pady=5)
+    # tk.Button(pdf_window, text="Examinar", command=lambda: select_file(output_pdf_entry)).pack(pady=5)
 
     tk.Label(pdf_window, text="Contraseña:").pack(pady=5)
     password_entry.pack(pady=5)
