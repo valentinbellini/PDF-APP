@@ -50,15 +50,18 @@ def open_pdf_lock():
     # Crear botones para las acciones
     tk.Label(pdf_window, text="Archivo PDF de entrada:").pack(pady=5)
     input_pdf_entry.pack(pady=5)
-    tk.Button(pdf_window, text="Seleccionar", command=lambda: select_file(input_pdf_entry)).pack(pady=5)
+    tk.Button(pdf_window, text="Examinar", command=lambda: select_file(input_pdf_entry)).pack(pady=5)
 
     tk.Label(pdf_window, text="Archivo PDF de salida:").pack(pady=5)
     output_pdf_entry.pack(pady=5)
-    tk.Button(pdf_window, text="Seleccionar", command=lambda: select_file(output_pdf_entry)).pack(pady=5)
+    tk.Button(pdf_window, text="Examinar", command=lambda: select_file(output_pdf_entry)).pack(pady=5)
 
     tk.Label(pdf_window, text="Contraseña:").pack(pady=5)
     password_entry.pack(pady=5)
 
+     # Salto de linea de 10 px
+    tk.Frame(pdf_window, height=20).pack()  
+    
     # Botones de acción
     tk.Button(pdf_window, text="Proteger PDF", command=on_protect).pack(pady=5)
     tk.Button(pdf_window, text="Verificar Protección", command=on_check).pack(pady=5)

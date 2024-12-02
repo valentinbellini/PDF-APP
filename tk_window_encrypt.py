@@ -38,7 +38,7 @@ def open_encrypt_file():
 
     pdf_window = Toplevel()
     pdf_window.title("Encrypt PDF")
-    pdf_window.geometry("400x400")
+    pdf_window.geometry("250x200")
 
     # Crear los campos de entrada
     input_pdf_entry = tk.Entry(pdf_window, width=40)
@@ -46,7 +46,10 @@ def open_encrypt_file():
     # Crear botones para las acciones
     tk.Label(pdf_window, text="Archivo PDF de entrada:").pack(pady=5)
     input_pdf_entry.pack(pady=5)
-    tk.Button(pdf_window, text="Seleccionar", command=lambda: select_file(input_pdf_entry)).pack(pady=5)
+    tk.Button(pdf_window, text="Examinar", command=lambda: select_file(input_pdf_entry)).pack(pady=5)
+
+    # Salto de linea de 10 px
+    tk.Frame(pdf_window, height=10).pack()  
 
     # Botones de acción
     tk.Button(pdf_window, text="Encrypt PDF", command=on_encrypt).pack(pady=5)
