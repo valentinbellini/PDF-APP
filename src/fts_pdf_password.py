@@ -2,7 +2,7 @@ from tkinter import messagebox
 from PyPDF2 import PdfReader, PdfWriter
 
 
-# Función para proteger un archivo PDF con una contraseña
+# Feature to protect a PDF file with a password
 def protect_pdf(input_pdf, output_pdf, password):
     pdf_writer = PdfWriter()
     pdf_reader = PdfReader(input_pdf)
@@ -16,7 +16,7 @@ def protect_pdf(input_pdf, output_pdf, password):
         pdf_writer.write(file)
     messagebox.showinfo("Éxito", f"El archivo '{output_pdf}' ha sido protegido con contraseña.")
 
-# Función para verificar si un archivo PDF ya está protegido
+# Feature to check if a PDF file is already protected
 def check_protection(input_pdf):
     pdf_reader = PdfReader(input_pdf)
     if pdf_reader.is_encrypted:
@@ -24,17 +24,17 @@ def check_protection(input_pdf):
     else:
         messagebox.showinfo("Información", f"El archivo '{input_pdf}' no tiene protección.")
 
-# Función para eliminar la contraseña de un archivo PDF protegido
+# Feature to remove password from a protected PDF file
 def remove_password(input_pdf, output_pdf, password):
     pdf_reader = PdfReader(input_pdf)
 
     if pdf_reader.is_encrypted:
         try:
-            # Intentamos descifrar el archivo PDF con la contraseña proporcionada
+            # Try to decrypt the PDF file with the password provided
             decryption_result = pdf_reader.decrypt(password)
 
-            # Si la contraseña es incorrecta, el resultado de decrypt() es 0
-            # [PYPDF2] TODO: raise Exception for wrong password - Esperando actualización
+            # If the password is incorrect, the result of decrypt() is 0
+            # [PYPDF2] TODO: raise Exception for wrong password - waiting update
             if decryption_result == 0:
                 messagebox.showerror("Error", "Contraseña incorrecta.")
                 return

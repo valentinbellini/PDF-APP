@@ -3,27 +3,28 @@ from src.tk_window_encrypt import *
 from src.tk_window_pdf_metadata import *
 import webbrowser
 
-# Función para abrir el enlace en el navegador
+# Function to open github repo link in web browser
 def open_link(event):
     webbrowser.open("https://github.com/valentinbellini/PDF-APP")
     
     
-# Crear la ventana principal
+# Create main window
 root = tk.Tk()
 root.title("Also PDF V1.1")
 root.geometry("300x250")
 
-# Crear botones en el menú principal
+# Create main buttons
 tk.Button(root, text="PDF Password", command=open_pdf_lock, width=20, height=2).pack(pady=10)
 tk.Button(root, text="File Encrypt", command=open_encrypt_file, width=20, height=2).pack(pady=10)
 tk.Button(root, text="PDF Metadata", command=open_pdf_metadata, width=20, height=2).pack(pady=10)
 
 
-# Crear un Label para mostrar el texto del hipervínculo
+# Create label to show up the link text
 link = tk.Label(root, text="https://github.com/valentinbellini/PDF-APP", fg="blue", cursor="hand2")
 link.pack(pady=20)
-# Asociar el clic del ratón con la función para abrir el enlace
+
+# Associate the mouse click with the function to open the link
 link.bind("<Button-1>", open_link)
 
-# Iniciar el bucle principal de la aplicación
+# App main bucle init
 root.mainloop()

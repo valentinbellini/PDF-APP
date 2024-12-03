@@ -2,9 +2,9 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, Toplevel
 from .fts_encrypt import *
 
-# Función para abrir la interfaz de "Encrypt File"
+# Function to open the interface of "Encrypt File"
 def open_encrypt_file():
-    # Función para manejar la acción de encrypt file
+    # Function to handle the encrypt file action
     def on_encrypt():
         input_pdf = input_pdf_entry.get()
         if input_pdf:
@@ -13,7 +13,7 @@ def open_encrypt_file():
         else:
             messagebox.showwarning("Advertencia", "Por favor, completa todos los campos.")
 
-    # Función para manejar la acción de eliminar encritpación
+    # Function to handle the action of deleting encryption
     def on_decrypt():
         input_pdf = input_pdf_entry.get()
         if input_pdf:
@@ -22,7 +22,7 @@ def open_encrypt_file():
             messagebox.showwarning("Advertencia", "Por favor, completa todos los campos.")
 
 
-    # Función para seleccionar un archivo PDF
+    # Function to select a PDF file
     def select_file(entry):
         # Allow selection of both PDF and .encrypted files
         filetypes = [
@@ -40,17 +40,17 @@ def open_encrypt_file():
     pdf_window.title("Encrypt PDF")
     pdf_window.geometry("250x200")
 
-    # Crear los campos de entrada
+    # Create the input fields
     input_pdf_entry = tk.Entry(pdf_window, width=40)
 
-    # Crear botones para las acciones
+    # Create buttons for the actions
     tk.Label(pdf_window, text="Archivo PDF de entrada:").pack(pady=5)
     input_pdf_entry.pack(pady=5)
     tk.Button(pdf_window, text="Examinar", command=lambda: select_file(input_pdf_entry)).pack(pady=5)
 
-    # Salto de linea de 10 px
+    # 10px line break (hop)
     tk.Frame(pdf_window, height=10).pack()  
 
-    # Botones de acción
+    # Action Buttons
     tk.Button(pdf_window, text="Encrypt PDF", command=on_encrypt).pack(pady=5)
     tk.Button(pdf_window, text="Decrypt PDF", command=on_decrypt).pack(pady=5)

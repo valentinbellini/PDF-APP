@@ -1,6 +1,6 @@
 from pikepdf import Pdf
 
-# Función para leer los metadatos del PDF
+# Function to read PDF metadata
 def read_metadata(input_pdf):
     try:
         pdf = Pdf.open(input_pdf)
@@ -17,7 +17,7 @@ def read_metadata(input_pdf):
     except Exception as e:
         return f"Error al leer los metadatos: {e}"
 
-# Función para agregar o modificar un metadato en el PDF
+# Function to add or modify a metadata in the PDF
 def add_metadata(input_pdf, output_pdf, key, value):
     try:
         with Pdf.open(input_pdf, allow_overwriting_input=True) as pdf:
