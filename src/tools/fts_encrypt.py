@@ -77,7 +77,7 @@ def decrypt_file(encrypted_file_path):
         # Ask the user if they want to delete the encrypted file
         if messagebox.askyesno("Eliminar archivo encriptado", f"¿Desea eliminar el archivo encriptado '{encrypted_file_path}'?"):
             os.remove(encrypted_file_path)
-            print(f"Archivo encriptado '{encrypted_file_path}' eliminado.")
+            messagebox.showinfo(f"Archivo encriptado '{encrypted_file_path}' eliminado.")
             
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred during decryption. Be sure the file extension is .encrypted")

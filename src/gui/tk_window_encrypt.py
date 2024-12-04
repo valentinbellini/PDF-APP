@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, Toplevel
-from .fts_encrypt import *
+from ..tools.fts_encrypt import *
 
 # Function to open the interface of "Encrypt File"
 def open_encrypt_file():

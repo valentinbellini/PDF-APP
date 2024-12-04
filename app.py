@@ -1,12 +1,18 @@
-from src.tk_window_pdf_pass import *
-from src.tk_window_encrypt import *
-from src.tk_window_pdf_metadata import *
+from src.gui.tk_window_pdf_pass import *
+from src.gui.tk_window_encrypt import *
+from src.gui.tk_window_pdf_metadata import *
 import webbrowser
+from logging_config import configure_logging
+import logging
 
 # Function to open github repo link in web browser
 def open_link(event):
     webbrowser.open("https://github.com/valentinbellini/PDF-APP")
     
+# Configurar logging
+configure_logging()
+logging.info("App Init")
+
     
 # Create main window
 root = tk.Tk()
