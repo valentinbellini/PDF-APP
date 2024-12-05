@@ -1,23 +1,9 @@
 from tkinter import messagebox
 from PyPDF2 import PdfReader, PdfWriter
 import logging
+from .utils import get_logger, handle_error
 
-# Set up logging for the module
-logger = logging.getLogger(__name__)  # Identifies the module for log messages
-
-
-# === Error Handling ===
-def handle_error(exception, user_message):
-    """
-    Handles errors centrally by logging and displaying messages.
-    
-    Parameters:
-        exception (Exception): The exception object to log.
-        user_message (str): The message to show to the user in the UI.
-    """
-    logger.error(f"{exception.__class__.__name__}: {exception}")
-    messagebox.showerror("Error", user_message)
-
+logger = get_logger("pdf_password")  # Create a logger for this specific module
 
 # === Decrypt and Remove Password ===
 def decrypt_pdf(input_pdf, password):
@@ -47,7 +33,6 @@ def decrypt_pdf(input_pdf, password):
         handle_error(e, f"Unknown error while unlocking: {e}")
     return None, False
 
-
 def save_pdf(reader, output_pdf):
     """
     Saves a PDF file after decrypting it.
@@ -66,7 +51,6 @@ def save_pdf(reader, output_pdf):
     except Exception as e:
         handle_error(e, f"Error saving the file: {e}")
 
-
 def remove_password(input_pdf, output_pdf, password):
     """
     Removes the password protection from a PDF file.
@@ -79,7 +63,6 @@ def remove_password(input_pdf, output_pdf, password):
     reader, was_encrypted = decrypt_pdf(input_pdf, password)
     if reader and was_encrypted:
         save_pdf(reader, output_pdf)
-
 
 # === Password Protection ===
 def protect_pdf(input_pdf, output_pdf, password):
@@ -108,7 +91,6 @@ def protect_pdf(input_pdf, output_pdf, password):
         handle_error(FileNotFoundError, f"The file '{input_pdf}' does not exist.")
     except Exception as e:
         handle_error(e, f"Error protecting the file: {e}")
-
 
 # === Protection Check ===
 def check_protection(input_pdf):

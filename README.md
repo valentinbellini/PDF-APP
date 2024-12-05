@@ -48,7 +48,7 @@ Note: If you are just looking for the `.exe`, you should go to "Releases" and do
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
    - Fork the repository.
-   - Create your feature branch (git checkout -b feature/  AmazingFeature).
-   - Commit your changes (git commit -m 'Add some       AmazingFeature').
-   - Push to the branch (git push origin feature/ AmazingFeature).
+   - Create your feature branch (git checkout -b feature/YourFeature).
+   - Commit your changes (git commit -m 'Add some YourFeature').
+   - Push to the branch (git push origin feature/YourFeature).
    - Open a pull request.

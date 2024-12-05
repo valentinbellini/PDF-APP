@@ -9,11 +9,11 @@ import logging
 def open_link(event):
     webbrowser.open("https://github.com/valentinbellini/PDF-APP")
     
-# Configurar logging
+# ====================== CONFIG LOGGING  ====================== #
 configure_logging()
 logging.info("App Init")
 
-    
+# ======================== MAIN WINDOW  ======================== #
 # Create main window
 root = tk.Tk()
 root.title("Also PDF V1.1")
@@ -23,7 +23,6 @@ root.geometry("300x250")
 tk.Button(root, text="PDF Password", command=open_pdf_lock, width=20, height=2).pack(pady=10)
 tk.Button(root, text="File Encrypt", command=open_encrypt_file, width=20, height=2).pack(pady=10)
 tk.Button(root, text="PDF Metadata", command=open_pdf_metadata, width=20, height=2).pack(pady=10)
-
 
 # Create label to show up the link text
 link = tk.Label(root, text="https://github.com/valentinbellini/PDF-APP", fg="blue", cursor="hand2")
